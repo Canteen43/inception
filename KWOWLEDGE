@@ -1,0 +1,10 @@
+Inside Alpine with copying:
+/usr/share/nginx:
+html
+http-default_server.conf
+
+Inside Alpine without copying:
+/usr/share/nginx:
+http-default_server.conf
+
+/usr/share/nginx/http-default_server.conf
