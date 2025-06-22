@@ -1,6 +1,6 @@
 # Inception
 
-> ⚠️ This project is currently under development and not yet fully functional.
+> ⚠️ This project is currently under development and not yet functional.
 
 ## Overview
 
