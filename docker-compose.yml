@@ -1,0 +1,6 @@
+services:
+  nginx:
+    build: nginx/
+    image: nginx_image
+    ports:
+      - "8080:80"
