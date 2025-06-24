@@ -1,0 +1,5 @@
+- Can I use "mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0" as the CMD?
+- Research login chicken-egg situation. Is there a predefined user, even on docker-alpine-mariadb?
+- Test that DB is reachable
+- Add wordpress config to DB
+- Integrate into docker compose
