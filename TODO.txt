@@ -1,5 +1,6 @@
 - Learn where to see docker logs
 - Check if --console is needed in CMD
+- Am I overwriting, restarting or parallel starting mariadbd
 - Expose port
 - Test that MariaDB is reachable
 - Add wordpress config to DB
