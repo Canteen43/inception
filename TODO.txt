@@ -1,5 +1,11 @@
-- Can I use "mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0" as the CMD?
-- Research login chicken-egg situation. Is there a predefined user, even on docker-alpine-mariadb?
+- Add mariadb client to install list
+- Create socket directory
+    - mkdir /run/mysqld
+    - chown mysql:mysql /run/mysqld
+- In "-it" mode: start mariadb, start client, add users
+    - mariadbd --user=mysql &
+    - mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0 &
+    - --console
 - Test that DB is reachable
 - Add wordpress config to DB
 - Integrate into docker compose
