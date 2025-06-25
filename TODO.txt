@@ -1,12 +1,9 @@
-- Add shell script
-    - Starting commands:
-        - mariadbd --user=mysql > /var/log/mariadbd.log 2>&1 &
-        - mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0 > /var/log/mariadbd.log 2>&1 &
-        - --console
-    - Recommended path: /usr/local/bin/
-    - If several entrypoints are needed, I can add docker-entrypoint.sh which will run
-    everything in /docker-entrypoint.d/
-
-- Test that DB is reachable
+- Automate shell script
+	- Current shell script is run manually with "sh" CMD
+	- Goal: Have it run as CMD (or entrypoint) so that container is fully automatic
+	- maybe use "--console" so that it doesn't stop
+	(- If several scripts are needed, I can add docker-entrypoint.sh which will run
+	everything in /docker-entrypoint.d/)
+- Test that MariaDB is reachable
 - Add wordpress config to DB
 - Integrate into docker compose
