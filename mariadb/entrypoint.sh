@@ -1,5 +1,14 @@
 #!/bin/sh
-mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 &
+
+# mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 &
+mariadbd --user=mysql &
+
+# wait for the database to start
+# TODO: find better alternative to sleep (maybe ping, maybe error on delay?)
 sleep 1
-# TODO: find better alternative to sleep
+
+# create the database and user for WordPress
 mariadb < /root/setup_wordpress_on_mariadb.sql
+
+# replaces the shell process with CMD
+exec "$@"

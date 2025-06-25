@@ -1,9 +1,6 @@
-- Automate shell script
-	- Current shell script is run manually with "sh" CMD
-	- Goal: Have it run as CMD (or entrypoint) so that container is fully automatic
-	- maybe use "--console" so that it doesn't stop
-	(- If several scripts are needed, I can add docker-entrypoint.sh which will run
-	everything in /docker-entrypoint.d/)
+- Learn where to see docker logs
+- Check if --console is needed in CMD
+- Expose port
 - Test that MariaDB is reachable
 - Add wordpress config to DB
 - Integrate into docker compose
