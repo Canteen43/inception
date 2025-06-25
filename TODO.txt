@@ -1,11 +1,12 @@
-- Add mariadb client to install list
-- Create socket directory
-    - mkdir /run/mysqld
-    - chown mysql:mysql /run/mysqld
-- In "-it" mode: start mariadb, start client, add users
-    - mariadbd --user=mysql &
-    - mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0 &
-    - --console
+- Add shell script
+    - Starting commands:
+        - mariadbd --user=mysql > /var/log/mariadbd.log 2>&1 &
+        - mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 --socket=0 > /var/log/mariadbd.log 2>&1 &
+        - --console
+    - Recommended path: /usr/local/bin/
+    - If several entrypoints are needed, I can add docker-entrypoint.sh which will run
+    everything in /docker-entrypoint.d/
+
 - Test that DB is reachable
 - Add wordpress config to DB
 - Integrate into docker compose
