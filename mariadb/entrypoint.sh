@@ -10,5 +10,8 @@ sleep 1
 # create the database and user for WordPress
 mariadb < /root/setup_wordpress_on_mariadb.sql
 
+# stop mariadbd so it can be restarted in the foreground
+pkill mariadbd
+
 # replaces the shell process with CMD
 exec "$@"

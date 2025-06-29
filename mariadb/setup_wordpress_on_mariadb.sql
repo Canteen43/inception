@@ -1,3 +1,3 @@
 CREATE DATABASE wordpress;
-CREATE USER 'wpuser'@'localhost' IDENTIFIED BY '42';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
+CREATE USER 'wpuser'@'%' IDENTIFIED BY '42';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'%';

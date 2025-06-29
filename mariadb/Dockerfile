@@ -7,6 +7,6 @@ RUN chown mysql:mysql /run/mysqld
 COPY setup_wordpress_on_mariadb.sql /root
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
+EXPOSE 3306
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
-CMD ["mariadbd", "--user=mysql", "--skip-networking=0", "--bind-address=0.0.0.0", "--port=3306"]
-# , "--console"
+CMD ["mariadbd", "--user=mysql", "--skip-networking=0", "--bind-address=0.0.0.0", "--port=3306", "--console"]
