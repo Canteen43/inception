@@ -1,20 +1,25 @@
 #!/bin/sh
 
-# mariadbd --user=mysql --skip-networking=0 --bind-address=0.0.0.0 --port=3306 &
+# Starting mariadb daemon in the background
+echo "Entrypoint script: Starting mariadbd in the background..."
 mariadbd --user=mysql &
 
-# wait for the database to start
-# TODO: find better alternative to sleep (maybe ping, maybe error on delay?)
-sleep 3
+# Wait until MariaDB is ready
+echo "Entrypoint script: Waiting for MariaDB to be ready..."
+until mariadb-admin ping; do
+    echo "Entrypoint script: MariaDB is not ready yet. Waiting 0.1 seconds..."
+    sleep 0.1
+done
+echo "Entrypoint script: MariaDB is ready."
 
 # create the database and user for WordPress
+echo "Entrypoint script: Creating WordPress database and user..."
 mariadb < /root/setup_wordpress_on_mariadb.sql
 
-# wait for command to run
-sleep 1
-
 # stop mariadbd so it can be restarted in the foreground
+echo "Entrypoint script: Stopping MariaDB daemon..."
 pkill mariadbd
 
 # replaces the shell process with CMD
+echo "Entrypoint script: Replacing shell process with CMD: $@"
 exec "$@"

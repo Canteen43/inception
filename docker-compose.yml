@@ -1,4 +1,9 @@
 services:
+  mariadb:
+    build: mariadb/
+    image: mariadb_image
+    ports:
+      - "3316:3306"
   nginx:
     build: nginx/
     image: nginx_image
