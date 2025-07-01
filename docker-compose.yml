@@ -4,6 +4,9 @@ services:
     image: mariadb_image
     ports:
       - "3316:3306"
+  wordpress-php:
+    build: wordpress-php/
+    image: wordpress-php_image
   nginx:
     build: nginx/
     image: nginx_image
