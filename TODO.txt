@@ -1,18 +1,8 @@
-- Create phpfpm-wordpress container
-	- test phpfpm if possible
-		- Testing without webserver:
-			- apk add fcgi
-			- echo -e "SCRIPT_FILENAME=/home/testscript.php\nREQUEST_METHOD=GET\n\n" | cgi-fcgi -bind -connect 127.0.0.1:9000
-			- Problem: PHP does not react
-			- Solution:
-				- enable logs in config file
-				- if that does not help move on
-				- delete test script after solving
-		- Add config file that sets listen to 0.0.0.0
-			- better if possible command line settings
-	- download wordpress
-	- add wpconfig
-	- add installation script
-	- test (by checking if database has changed)
+- run installation script in wordpress container
+Problem: The installation script needs the other container to run.
+	- If I run the container in shell mode, I don't have access to the other container.
+	- If I run in docker compose, I have less control.
+
+
 - Further down the road
-    - initialize mariadb at startup
+	- initialize mariadb via entrypoint script

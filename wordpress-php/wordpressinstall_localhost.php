@@ -9,7 +9,7 @@ require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
 try {
     $result = wp_install(
-        'Karls Secure Saturday Screw Up',       // Site title
+        'Karlito Party Blog',       // Site title
         'user1',               // Admin username
         'user1@example.com',   // Admin email
         true,                  // Public site
