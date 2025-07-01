@@ -5,11 +5,15 @@ DONE:
 	- Test command: 
 		mariadb --host=0.0.0.0 --port=3316 -u wpuser -p
 TODO:
-- Make sure it can talk to nginx
-	- Determine next step:
-		- Start working on forwarding NGINX container?
-		- Does simple PHP-Server make sense for testing?
-		- Should I use curl to test outside server availability?
+- Try to make nginx talk to php-wordpress
+	- It looks like the nginx - php communication can only work with a volume
+		- Learn about volumes
+		- Add volume
+		- Test that both containers can access the volume
+	- Provide http config file for NGINX
+
+Extra question:
+- How do docker compose ports interact with each other and the system.
 
 
 
@@ -19,3 +23,4 @@ TODO:
 	- initialize mariadb via entrypoint script
 	- Use environment variables
 	- Get rid of all the open passwords
+	- Add makefile
