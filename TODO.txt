@@ -7,13 +7,10 @@ DONE:
 TODO:
 - Try to make nginx talk to php-wordpress
 	- It looks like the nginx - php communication can only work with a volume
-		- Learn about volumes
+		- Rename /var/www/wordpress to wordpress_src and then copy over in entrypoint script
 		- Add volume
 		- Test that both containers can access the volume
 	- Provide http config file for NGINX
-
-Extra question:
-- How do docker compose ports interact with each other and the system.
 
 
 
