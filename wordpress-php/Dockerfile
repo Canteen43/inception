@@ -22,18 +22,19 @@ USER www-data
 WORKDIR /var/www
 RUN	curl -O https://wordpress.org/latest.tar.gz && \
 	tar -xzf latest.tar.gz && \
-	rm latest.tar.gz
+	rm latest.tar.gz && \
+	mv wordpress wordpress_src
 WORKDIR /
 USER root
 
 # Adding wp-config.php
-WORKDIR /var/www/wordpress
+WORKDIR /var/www/wordpress_src
 COPY wp-config.php .
 RUN chown www-data:www-data wp-config.php
 WORKDIR /
 
 # Adding a script to install WordPress
-WORKDIR /var/www/wordpress
+WORKDIR /var/www/wordpress_src
 COPY wordpressinstall_localhost.php .
 RUN chown www-data:www-data wordpressinstall_localhost.php && \
 	chmod +x wordpressinstall_localhost.php

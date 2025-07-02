@@ -6,10 +6,7 @@ DONE:
 		mariadb --host=0.0.0.0 --port=3316 -u wpuser -p
 TODO:
 - Try to make nginx talk to php-wordpress
-	- It looks like the nginx - php communication can only work with a volume
-		- Rename /var/www/wordpress to wordpress_src and then copy over in entrypoint script
-		- Add volume
-		- Test that both containers can access the volume
+	- Add volume to nginx container
 	- Provide http config file for NGINX
 
 
