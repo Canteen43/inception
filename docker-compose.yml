@@ -16,5 +16,7 @@ services:
   nginx:
     build: nginx/
     image: nginx_image
+    volumes:
+      - wordpress:/var/www/wordpress
     ports:
       - "8080:80"
