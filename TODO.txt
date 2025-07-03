@@ -5,10 +5,11 @@ DONE:
 	- Test command: 
 		mariadb --host=0.0.0.0 --port=3316 -u wpuser -p
 TODO:
-- Try to make nginx talk to php-wordpress
-	- Add entrypoint script to nginx container
-	- Let nginx wait for wordpress before running webserver
+- Try to make nginx talk to php-Wordpress
+	- Run php-fpm inside wordpress container
+		- as CMD?
 	- Provide http config file for NGINX
+		- wordpress over port 80
 
 
 
