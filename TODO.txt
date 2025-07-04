@@ -1,14 +1,9 @@
-DONE:
-- Working prototype
-TODO:
-- Start iterating on prototype
-
-
-
-
-- Further down the road
-	- initialize mariadb via entrypoint script
-	- Use environment variables
-	- Get rid of all the open passwords
-	- Add makefile
-	- Clean up
+- put mariadb database inside volume
+	- CURRENTLY: initializing DB inside docker image
+	- GOAL: initializing db in entrypoint script so that data is on volume
+		- Continue adding comments to dockerfile
+		- Try deleting .sql file and move logic to entrypoint script
+- Add makefile
+- Make it run over HTTPS and 443
+- Use environment variables
+- Get rid of all the open passwords

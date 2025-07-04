@@ -1,13 +1,11 @@
 volumes:
   wordpress:
+  database:
 
 services:
   mariadb:
     build: mariadb/
     image: mariadb_image
-# TODO: Exposure is not needed, because docker networks are automatically connected
-    ports:
-      - "3316:3306"
   wordpress-php:
     build: wordpress-php/
     image: wordpress-php_image
