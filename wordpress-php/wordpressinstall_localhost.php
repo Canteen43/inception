@@ -1,7 +1,9 @@
 <?php
 
-define('WP_HOME', 'http://localhost');
-define('WP_SITEURL', 'http://localhost');
+// define('WP_HOME', 'http://localhost:8080');
+// define('WP_SITEURL', 'http://localhost:8080');
+define('WP_HOME', 'http://127.0.0.1:8080');
+define('WP_SITEURL', 'http://127.0.0.1:8080');
 define('WP_INSTALLING', true);
 
 require_once __DIR__ . '/wp-load.php';

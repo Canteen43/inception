@@ -6,10 +6,10 @@ RUN apk add --no-cache tini nginx
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-COPY custom.conf /etc/nginx/http.d/custom.conf
-COPY index.html /var/www/localhost/htdocs/index.html
+COPY wordpress_http.conf /etc/nginx/http.d/wordpress_http.conf
+# COPY index.html /var/www/localhost/htdocs/index.html
 
 EXPOSE 80
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off; error_log /dev/stderr info;"]

@@ -1,14 +1,7 @@
-- Wordpress container
 DONE:
-- Basic install
-- Can talk to mariadb via wordpress
-	- Test command: 
-		mariadb --host=0.0.0.0 --port=3316 -u wpuser -p
+- Working prototype
 TODO:
-- Try to make nginx talk to php-Wordpress
-	- Provide http config file for NGINX
-		- wordpress over port 80
-
+- Start iterating on prototype
 
 
 
@@ -18,3 +11,4 @@ TODO:
 	- Use environment variables
 	- Get rid of all the open passwords
 	- Add makefile
+	- Clean up
