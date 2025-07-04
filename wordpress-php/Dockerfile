@@ -42,4 +42,4 @@ WORKDIR /
 
 # Setting entrypoint and command
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
-CMD ["sh"]
+CMD ["php-fpm83", "--nodaemonize"]
