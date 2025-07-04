@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Initializing the database (this puts system tables into mariadb)
+mariadb-install-db --user=mysql --datadir=/var/lib/mysql --basedir=/usr
+
 # Starting mariadb daemon in the background
 echo "Entrypoint script: Starting mariadbd in the background..."
 mariadbd --user=mysql &
@@ -14,7 +17,11 @@ echo "Entrypoint script: MariaDB is ready."
 
 # create the database and user for WordPress
 echo "Entrypoint script: Creating WordPress database and user..."
-mariadb < /root/setup_wordpress_on_mariadb.sql
+mariadb -e "
+CREATE DATABASE wordpress;
+CREATE USER 'wpuser'@'%' IDENTIFIED BY '42';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'%';
+"
 
 # stop mariadbd so it can be restarted in the foreground
 echo "Entrypoint script: Stopping MariaDB daemon..."

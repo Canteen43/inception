@@ -1,8 +1,7 @@
 - put mariadb database inside volume
 	- CURRENTLY: initializing DB inside docker image
 	- GOAL: initializing db in entrypoint script so that data is on volume
-		- Continue adding comments to dockerfile
-		- Try deleting .sql file and move logic to entrypoint script
+		- next step: develop to prevent re-initialization of data on restart without volume deletion
 - Add makefile
 - Make it run over HTTPS and 443
 - Use environment variables
