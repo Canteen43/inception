@@ -1,5 +1,3 @@
-- Research makefile
-	- add simple commands for controlling docker compose
 - Make it run over HTTPS and 443
 - Use environment variables
 - Get rid of all the open passwords
