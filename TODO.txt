@@ -1,7 +1,3 @@
-- Make it run over HTTPS and 443
-	- Certificates work
-	- Find out why wordpress_https config does not work
-	- then delete old configs
 - Readiness of nginx entrypoint
 - Use environment variables
 - Get rid of all the open passwords

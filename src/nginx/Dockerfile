@@ -13,8 +13,8 @@ RUN apk add --no-cache \
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-COPY wordpress_http.conf /etc/nginx/http.d/wordpress_http.conf
-# COPY index.html /var/www/localhost/htdocs/index.html
+# Adding nginx config file
+COPY wordpress_https.conf /etc/nginx/http.d/
 
 EXPOSE 80
 
