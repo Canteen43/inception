@@ -26,6 +26,8 @@
 		- should I set to set the port there?
 		- add port to wordpressinstall
 		- can I use my own 443 port?
+		- do I need to edit servername in config file?
+			- or was config just for http
 
 - Add dockerignore?
 - Is there a way to make the blog prettier?
