@@ -1,6 +1,13 @@
 FROM alpine:3.21.3
 
-RUN apk add --no-cache tini nginx
+# Installing dependencies without cache to reduce image size
+RUN apk add --no-cache \
+	# Tini handles zombie processes and signals
+	tini \
+	# Nginx is the web server that will run as the command
+	nginx \
+	# OpenSSL is used for generating self-signed certificates
+	openssl
 
 # Adding entrypoint script
 COPY entrypoint.sh /usr/local/bin
