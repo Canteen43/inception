@@ -1,9 +1,32 @@
-- Use environment variables
-	- research if we can use env instead of docker secrets
+- Use environment variables and get rid of all the open passwords
 	- research how env works in docker compose
+		- PROBLEM: Scope of these environment variables is unclear to me
+		- SOLUTION: There are many different methods with different scopes
+			- Find out where passwords and usernames are used
+				- nginx
+					- servername in wordpress_https.conf (buildtime)
+				- wordpress-php
+					- wordpress username and password in entrypoint.sh (runtime)
+					- servername, port (if not standard 443), username, email and password of wordpress admin in wordpressinstall.php (runtime)
+					- wordpress username and password in wp-config.php (runtime)
+				- mariadb
+					- wordpress user and password in entrypoint.sh (runtime)
+			- Idea: Work with env_file
+				- can be reused for all containers
+				- injects environment variables into environment of containers
+			- PROBLEM: It seems like .env can be used as env_files which is very confusing
+			- SOLUTION: Take a moment to think about it. If nothing becomes clear, start iteratively. 
 	- implement env logic
-	- add placeholder
-- Get rid of all the open passwords
+
+
 - add special server name
+	- name: kweihman.42.fr
+	- I edited C:\Windows\System32\drivers\etc\hosts
+		- it works
+		- should I set to set the port there?
+		- add port to wordpressinstall
+		- can I use my own 443 port?
+
 - Add dockerignore?
 - Is there a way to make the blog prettier?
+- Update README

@@ -11,6 +11,7 @@ RUN apk add --no-cache \
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+# TODO: Try if it works without this part
 # Adding a config file so that php-fpm listens on all interfaces instead of just localhost
 RUN echo "listen = 0.0.0.0:9000" > /etc/php83/php-fpm.d/z-custom.conf
 

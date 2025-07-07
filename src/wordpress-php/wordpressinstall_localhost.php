@@ -1,7 +1,9 @@
 <?php
 
-define('WP_HOME', 'https://127.0.0.1:8081');
-define('WP_SITEURL', 'https://127.0.0.1:8081');
+define('WP_HOME', 'https://kweihman.42.fr:8081');
+define('WP_SITEURL', 'https://kweihman.42.fr:8081');
+// define('WP_HOME', 'https://127.0.0.1:8081');
+// define('WP_SITEURL', 'https://127.0.0.1:8081');
 define('WP_INSTALLING', true);
 
 require_once __DIR__ . '/wp-load.php';

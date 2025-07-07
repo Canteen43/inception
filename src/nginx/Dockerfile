@@ -16,7 +16,6 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 # Adding nginx config file
 COPY wordpress_https.conf /etc/nginx/http.d/
 
-EXPOSE 80
-
+# Setting entrypoint and command
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off; error_log /dev/stderr info;"]
