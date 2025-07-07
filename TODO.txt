@@ -1,6 +1,9 @@
-- Readiness of nginx entrypoint
 - Use environment variables
+	- research if we can use env instead of docker secrets
+	- research how env works in docker compose
+	- implement env logic
+	- add placeholder
 - Get rid of all the open passwords
 - add special server name
-- Add dockerignore
+- Add dockerignore?
 - Is there a way to make the blog prettier?
