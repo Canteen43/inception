@@ -1,3 +1,11 @@
+- install docker on VM
+- make website work on 42 computers
+
+- make website name work on 42 computers
+	- adding to hostable not available
+	- website name be put with getenv
+	- find good name: website, host, domain?
+
 - Use environment variables and get rid of all the open passwords
 	- PLAN: use .env file as "env_file" in docker compose for everything
 		PROBLEM: wp-config.php seems not to be able to read the variables
