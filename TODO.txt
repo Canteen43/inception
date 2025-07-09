@@ -1,20 +1,18 @@
-- install docker on VM
 - make website work on 42 computers
+	- make (domain?) customizable
+	- find out correct name for (domain?)
 
-- make website name work on 42 computers
-	- adding to hostable not available
-	- website name be put with getenv
-	- find good name: website, host, domain?
-
-- Use environment variables and get rid of all the open passwords
-	- PLAN: use .env file as "env_file" in docker compose for everything
-		PROBLEM: wp-config.php seems not to be able to read the variables
-		SOLUTION:
-			- wordpressinstall works fine with environment variables.
-			- reason might be that fastCGI run wp-config
+- ENVIRONMENT
+	- remove hardcoded credentials from wordpress-php entrypoint
+	- get env vars to work for wp-config.php
+		- Option 1: pass as fastCGI param (add to nginx config)
+		- Option 2: add to php-fpm config
+		- More Options available?
 
 
 - Add dockerignore?
 - Is there a way to make the blog prettier?
 - look at restarting containers
 - Update README
+- prep VM for eval
+	- install docker
