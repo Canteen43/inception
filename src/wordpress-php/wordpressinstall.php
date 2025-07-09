@@ -1,9 +1,8 @@
 <?php
 
-define('WP_HOME', 'https://kweihman.42.fr:8081');
-// define('WP_HOME', 'https://kweihman.42.fr:' . getenv('HOST_PORT'));
-define('WP_SITEURL', 'https://kweihman.42.fr:8081');
-// define('WP_SITEURL', 'https://kweihman.42.fr:' . getenv('HOST_PORT'));
+$host = 'https://' . getenv('HOST_NAME') . ':' . getenv('HOST_PORT');
+define('WP_HOME', $host);
+define('WP_SITEURL', $host);
 define('WP_INSTALLING', true);
 
 require_once __DIR__ . '/wp-load.php';

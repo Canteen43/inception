@@ -1,7 +1,3 @@
-- make website work on 42 computers
-	- make (domain?) customizable
-	- find out correct name for (domain?)
-
 - ENVIRONMENT
 	- remove hardcoded credentials from wordpress-php entrypoint
 	- get env vars to work for wp-config.php
