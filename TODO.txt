@@ -6,9 +6,12 @@
 		- More Options available?
 
 
-- Add dockerignore?
-- Is there a way to make the blog prettier?
 - look at restarting containers
-- Update README
+- Is there a way to make the blog prettier?
+- Add dockerignore?
 - prep VM for eval
+	- add hostname DONE
+	- install git
 	- install docker
+	- test download from git and running
+- Update README
