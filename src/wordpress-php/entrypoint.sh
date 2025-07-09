@@ -15,7 +15,7 @@ rm -rf /var/www/wordpress_src
 
 # Waiting until MariaDB is ready
 echo "Entrypoint script: Waiting for MariaDB to be ready..."
-until mariadb-admin ping -h mariadb -P 3306 -u wpuser -p42; do
+until mariadb-admin ping -h mariadb -P 3306 -u "${WP_DB_USER}" -p"${WP_DB_PASS}"; do
     echo "Entrypoint script: MariaDB is not ready yet. Waiting 0.1 seconds..."
     sleep 0.1
 done

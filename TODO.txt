@@ -25,4 +25,5 @@
 
 - Add dockerignore?
 - Is there a way to make the blog prettier?
+- look at restarting containers
 - Update README

@@ -13,10 +13,12 @@ services:
     image: wordpress-php_image
     volumes:
       - wordpress:/var/www/wordpress
+    env_file:
+      - .env
   nginx:
     build: nginx/
     image: nginx_image
     volumes:
       - wordpress:/var/www/wordpress
     ports:
-      - "8081:443"
+      - "${HOST_PORT}:443"
