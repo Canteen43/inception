@@ -27,7 +27,7 @@ if mariadb -h mariadb -u wpuser -p42 -e "USE wordpress; SELECT * FROM wp_options
     echo "Entrypoint script: WordPress already installed, skipping installation."
 else
     echo "Entrypoint script: WordPress not installed, running installer..."
-    php /var/www/wordpress/wordpressinstall_localhost.php
+    php /var/www/wordpress/wordpressinstall.php
 fi
 
 # replaces the shell process with CMD

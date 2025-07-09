@@ -1,26 +1,9 @@
 - Use environment variables and get rid of all the open passwords
-	- research how env works in docker compose
-		- PROBLEM: Scope of these environment variables is unclear to me
-		- SOLUTION: There are many different methods with different scopes
-			- Find out where passwords and usernames are used
-				- nginx
-					- nothing
-				- wordpress-php
-					- wordpress username and password in entrypoint.sh (runtime)
-					- servername, port (if not standard 443), username, email and password of wordpress admin in wordpressinstall.php (runtime)
-					- wordpress username and password in wp-config.php (runtime)
-				- mariadb
-					- wordpress user and password in entrypoint.sh (runtime)
-			- Idea: Work with env_file
-				- can be reused for all containers
-				- injects environment variables into environment of containers
-			- PROBLEM: It seems like .env can be used as env_files which is very confusing
-			- SOLUTION: Take a moment to think about it. If nothing becomes clear, start iteratively.
-				- It seems like a ".env" file at root lets variables be used in the docker compose text and the same file can be passed to all
-				containers with the "env_file" option. Let's do that
-				- Now, I only have to find out how to access the environment variables in the PHP scripts
-				(luckily I don't run them via fastCGI but normal php)
-	- implement env logic
+	- PLAN: use .env file as "env_file" in docker compose for everything
+		PROBLEM: wp-config.php seems not to be able to read the variables
+		SOLUTION:
+			- wordpressinstall works fine with environment variables.
+			- reason might be that fastCGI run wp-config
 
 
 - Add dockerignore?

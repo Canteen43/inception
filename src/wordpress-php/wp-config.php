@@ -24,9 +24,12 @@ define( 'DB_NAME', 'wordpress' );
 
 /** Database username */
 define( 'DB_USER', 'wpuser' );
+// define( 'DB_USER', getenv('WP_DB_USER') );
 
 /** Database password */
 define( 'DB_PASSWORD', '42' );
+// define( 'DB_PASSWORD', getenv('WP_DB_PASS') );
+
 
 /** Database hostname */
 define( 'DB_HOST', 'mariadb' );

@@ -36,9 +36,9 @@ WORKDIR /
 
 # Adding a script to install WordPress
 WORKDIR /var/www/wordpress_src
-COPY wordpressinstall_localhost.php .
-RUN chown www-data:www-data wordpressinstall_localhost.php && \
-	chmod +x wordpressinstall_localhost.php
+COPY wordpressinstall.php .
+RUN chown www-data:www-data wordpressinstall.php && \
+	chmod +x wordpressinstall.php
 WORKDIR /
 
 # Setting entrypoint and command

@@ -31,8 +31,8 @@ if [ ! -d /var/lib/mysql/wordpress ]; then
 	echo "Entrypoint script: Creating WordPress database and user..."
 	mariadb -e "
 	CREATE DATABASE wordpress;
-	CREATE USER 'wpuser'@'%' IDENTIFIED BY '42';
-	GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'%';
+	CREATE USER '${WP_DB_USER}'@'%' IDENTIFIED BY '${WP_DB_PASS}';
+	GRANT ALL PRIVILEGES ON wordpress.* TO '${WP_DB_USER}'@'%';
 	"
 	# Stopping mariadb background daemon
 	echo "Entrypoint script: Stopping MariaDB daemon..."

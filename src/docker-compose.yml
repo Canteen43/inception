@@ -8,6 +8,8 @@ services:
     image: mariadb_image
     volumes:
       - database:/var/lib/mysql
+    env_file:
+      - .env
   wordpress-php:
     build: wordpress-php/
     image: wordpress-php_image
