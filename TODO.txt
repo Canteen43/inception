@@ -1,10 +1,4 @@
-- ENVIRONMENT
-	- remove hardcoded credentials from wordpress-php entrypoint
-	- get env vars to work for wp-config.php
-		- Option 1: pass as fastCGI param (add to nginx config)
-		- Option 2: add to php-fpm config
-		- More Options available?
-
+- switch service names for env vars?
 
 - look at restarting containers
 - Is there a way to make the blog prettier?

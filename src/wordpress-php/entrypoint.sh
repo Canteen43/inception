@@ -21,10 +21,9 @@ until mariadb-admin ping -h mariadb -P 3306 -u "${WP_DB_USER}" -p"${WP_DB_PASS}"
 done
 echo "Entrypoint script: MariaDB is ready."
 
-# TODO: Remove hardcoded credentials
 # Checking if wordpress needs installation
 echo "Entrypoint script: Checking if wordpress needs installation..."
-if mariadb -h mariadb -u wpuser -p42 -e "USE wordpress; SELECT * FROM wp_options;"  >/dev/null 2>&1; then
+if mariadb -h mariadb -u "${WP_DB_USER}" -p"${WP_DB_PASS}" -e "USE wordpress; SELECT * FROM wp_options;"  >/dev/null 2>&1; then
     echo "Entrypoint script: WordPress already installed, skipping installation."
 else
     echo "Entrypoint script: WordPress not installed, running installer..."

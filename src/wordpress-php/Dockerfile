@@ -11,9 +11,9 @@ RUN apk add --no-cache \
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# TODO: Try if it works without this part
-# Adding a config file so that php-fpm listens on all interfaces instead of just localhost
-RUN echo "listen = 0.0.0.0:9000" > /etc/php83/php-fpm.d/z-custom.conf
+
+# Adding a php-fpm config file that makes php-fpm listen on all interfaces and does not clear the environment
+RUN echo -e "listen = 0.0.0.0:9000\nclear_env = no" > /etc/php83/php-fpm.d/z-custom.conf
 
 # Adding wordpress user
 RUN adduser -D -G www-data www-data
