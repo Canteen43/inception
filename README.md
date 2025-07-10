@@ -1,12 +1,11 @@
 # Inception
 
-> ⚠️ **Note:** This project is still under development.
-
 A Docker and Docker Compose project that sets up a complete web infrastructure with NGINX, WordPress, and MariaDB services running in separate containers within a custom network.
 
 ## Overview
 
 This project builds a complete web infrastructure using Docker containers, each running a specific service, orchestrated with Docker Compose. The infrastructure consists of NGINX (web server with SSL), WordPress (CMS with PHP-FPM), and MariaDB (database).
+Check out `en.subject.pdf` to learn more about the requirements of the exercise.
 
 ## Features
 
@@ -42,8 +41,9 @@ This project builds a complete web infrastructure using Docker containers, each 
    ```
 
 4. **Access the application:**
-   - Navigate to `https://kweihman.42.fr:8081/`
-   - Complete WordPress installation
+   - Navigate to `https://127.0.0.1:8081/`
+   - If you changed HOST_NAME or HOST_PORT in `.env`, access via `https://<your_hostname>:<your_hostport>/`
+   - It you changed HOST_NAME to a custom name, you might need to add it to your hosts file (e.g. /etc/hosts)
 
 ## Available Commands
 
@@ -51,7 +51,7 @@ This project builds a complete web infrastructure using Docker containers, each 
 make        # Build and start all services
 make up     # Start services
 make down   # Stop services
-make fdown  # Force stop services
+make fdown  # Stop services and removes images/volumes
 make re     # Rebuild everything
 make logs   # View container logs
 ```

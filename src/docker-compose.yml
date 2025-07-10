@@ -10,6 +10,7 @@ services:
       - database:/var/lib/mysql
     env_file:
       - .env
+    restart: on-failure
   wordpress-php:
     build: wordpress-php/
     image: wordpress-php_image
@@ -17,6 +18,7 @@ services:
       - wordpress:/var/www/wordpress
     env_file:
       - .env
+    restart: on-failure
   nginx:
     build: nginx/
     image: nginx_image
@@ -24,3 +26,4 @@ services:
       - wordpress:/var/www/wordpress
     ports:
       - "${HOST_PORT}:443"
+    restart: on-failure
