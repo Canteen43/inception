@@ -1,3 +1,15 @@
+- Debug project not running on 42 machine
 - Remove debug from mariadb entrypoint
+- Add hostname logic to wordpressinstall
+- Add network
 - Remove warning from README
 - Remove todo
+
+
+
+$hostName = getenv('HOST_NAME');
+$hostPort = getenv('HOST_PORT');
+if ($hostPort == 443)
+	$host = 'https://' . $hostName;
+else
+	$host = 'https://' . $hostName . ':' . $hostPort;
