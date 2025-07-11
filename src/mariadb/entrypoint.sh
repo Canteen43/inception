@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# TODO: Remove this debug snippet
+ls -laR /run
+
 # Checking if initialization is needed. (Initialization puts system tables into mariadb)
 echo "Entrypoint script: Checking if MariaDB needs to be initialized..."
 if [ ! -d /var/lib/mysql/mysql ]; then

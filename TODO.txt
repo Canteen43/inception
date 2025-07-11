@@ -1,0 +1,3 @@
+- Remove debug from mariadb entrypoint
+- Remove warning from README
+- Remove todo
