@@ -1,6 +1,13 @@
 <?php
 
-$host = 'https://' . getenv('HOST_NAME') . ':' . getenv('HOST_PORT');
+$hostName = getenv('HOST_NAME');
+$hostPort = getenv('HOST_PORT');
+if ($hostPort == 443)
+	$host = 'https://' . $hostName;
+else
+	$host = 'https://' . $hostName . ':' . $hostPort;
+
+// $host = 'https://' . getenv('HOST_NAME') . ':' . getenv('HOST_PORT');
 define('WP_HOME', $host);
 define('WP_SITEURL', $host);
 define('WP_INSTALLING', true);

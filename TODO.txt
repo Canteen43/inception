@@ -1,5 +1,3 @@
-- Debug project not running on 42 machine
-- Remove debug from mariadb entrypoint
 - Add hostname logic to wordpressinstall
 - Add network
 - Remove warning from README
