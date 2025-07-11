@@ -2,6 +2,10 @@ volumes:
   wordpress:
   database:
 
+networks:
+  inception_network:
+    driver: bridge
+
 services:
   mariadb:
     build: mariadb/
@@ -11,6 +15,8 @@ services:
     env_file:
       - .env
     restart: on-failure
+    networks:
+      - inception_network
   wordpress-php:
     build: wordpress-php/
     image: wordpress-php_image
@@ -19,6 +25,8 @@ services:
     env_file:
       - .env
     restart: on-failure
+    networks:
+      - inception_network
   nginx:
     build: nginx/
     image: nginx_image
@@ -27,3 +35,5 @@ services:
     ports:
       - "${HOST_PORT}:443"
     restart: on-failure
+    networks:
+      - inception_network

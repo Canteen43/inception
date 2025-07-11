@@ -1,7 +1,5 @@
 # Inception
 
-⚠️ **Warning: This project is still under construction and might not run.**
-
 A Docker and Docker Compose project that sets up a complete web infrastructure with NGINX, WordPress, and MariaDB services running in separate containers within a custom network.
 
 ## Overview
